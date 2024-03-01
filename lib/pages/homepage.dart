@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/pages/my_text_field.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+//import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_project/pages/my_app_bar.dart';
+import 'package:flutter_project/models/categories_models.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+  List<CategoryModel> categories = [];
+
+  void _getCategories() {
+    categories = CategoryModel.getCategories();
+  }
 
   @override
   Widget build(BuildContext context) {
+    _getCategories();
     return Scaffold(
       appBar: myAppBar(),
       body: Column(
@@ -24,7 +32,20 @@ class HomePage extends StatelessWidget {
               ]),
               child: const MyTextField(),
             ),
-          )
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const SizedBox(
+            child: Text(
+              "Categories",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
         ],
       ),
     );
