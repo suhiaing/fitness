@@ -6,7 +6,7 @@ AppBar myAppBar() {
     title: const Text(
       "Breakfast",
       style: TextStyle(
-          color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+          color: Colors.black, fontSize: 40, fontWeight: FontWeight.bold),
     ),
     backgroundColor: Colors.white,
     centerTitle: true,
@@ -28,7 +28,7 @@ AppBar myAppBar() {
         child: Container(
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(12),
             color: Colors.white,
           ),
           child: SvgPicture.asset("images/dots.svg"),

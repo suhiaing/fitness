@@ -1,52 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/pages/my_text_field.dart';
-//import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_project/pages/my_app_bar.dart';
-import 'package:flutter_project/models/categories_models.dart';
+import 'package:flutter_project/pages/catagories_section.dart';
 
-// ignore: must_be_immutable
 class HomePage extends StatelessWidget {
-  HomePage({super.key});
-  List<CategoryModel> categories = [];
-
-  void _getCategories() {
-    categories = CategoryModel.getCategories();
-  }
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    _getCategories();
     return Scaffold(
       appBar: myAppBar(),
-      body: Column(
-        children: [
-          Center(
-            child: Container(
-              margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 15, left: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
               width: 1000,
               decoration: BoxDecoration(boxShadow: [
                 BoxShadow(
-                    color: const Color(0xff101617).withOpacity(0.1),
+                    color: const Color(0xff101617).withOpacity(0.19),
                     blurRadius: 40,
                     spreadRadius: 0)
               ]),
               child: const MyTextField(),
             ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          const SizedBox(
-            child: Text(
-              "Categories",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.left,
+            const SizedBox(
+              height: 10,
             ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-        ],
+            Container(
+              margin: const EdgeInsets.only(left: 5),
+              child: const Text(
+                "Categories",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            CategoriesSection(),
+          ],
+        ),
       ),
     );
   }

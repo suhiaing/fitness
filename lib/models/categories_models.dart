@@ -16,7 +16,7 @@ class CategoryModel {
 
     categories.add(CategoryModel(
         name: 'Salad',
-        iconPath: 'assets/icons/plate.svg',
+        iconPath: 'images/plate.svg',
         boxColor: const Color(0xff9DCEFF)));
 
     categories.add(CategoryModel(
