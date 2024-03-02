@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/pages/diet.dart';
 import 'package:flutter_project/pages/my_text_field.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_project/pages/my_app_bar.dart';
 import 'package:flutter_project/pages/catagories_section.dart';
 
@@ -12,12 +12,11 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: myAppBar(),
       body: Padding(
-        padding: const EdgeInsets.only(top: 15, left: 20),
+        padding: const EdgeInsets.only(top: 25, left: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: 1000,
               decoration: BoxDecoration(boxShadow: [
                 BoxShadow(
                     color: const Color(0xff101617).withOpacity(0.19),
@@ -27,19 +26,33 @@ class HomePage extends StatelessWidget {
               child: const MyTextField(),
             ),
             const SizedBox(
-              height: 10,
+              height: 30,
             ),
             Container(
               margin: const EdgeInsets.only(left: 5),
               child: const Text(
                 "Categories",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 30,
             ),
             CategoriesSection(),
+            const SizedBox(
+              height: 30,
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 5),
+              child: const Text(
+                "Recommendation for diet",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            DietSection()
           ],
         ),
       ),
