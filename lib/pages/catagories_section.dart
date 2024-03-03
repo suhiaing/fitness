@@ -30,7 +30,7 @@ class CategoriesSection extends StatelessWidget {
               return Container(
                 width: 100,
                 decoration: BoxDecoration(
-                    color: categories[index].boxColor.withOpacity(0.3),
+                    color: categories[index].boxColor.withOpacity(0.2),
                     borderRadius: BorderRadius.circular(16)),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -16,17 +16,6 @@ class DietSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.only(left: 20),
-          child: Text(
-            'Recommendation\nfor Diet',
-            style: TextStyle(
-                color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),
-          ),
-        ),
-        const SizedBox(
-          height: 15,
-        ),
         SizedBox(
           height: 240,
           child: ListView.separated(
@@ -34,33 +23,25 @@ class DietSection extends StatelessWidget {
               return Container(
                 width: 210,
                 decoration: BoxDecoration(
-                    color: diets[index].boxColor.withOpacity(0.3),
+                    color: diets[index].boxColor.withOpacity(0.2),
                     borderRadius: BorderRadius.circular(20)),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     SvgPicture.asset(diets[index].iconPath),
-                    Column(
-                      children: [
-                        Text(
-                          diets[index].name,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black,
-                              fontSize: 16),
-                        ),
-                        Text(
-                          diets[index].level +
-                              ' | ' +
-                              diets[index].duration +
-                              ' | ' +
-                              diets[index].calorie,
-                          style: const TextStyle(
-                              color: Color(0xff7B6F72),
-                              fontSize: 13,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
+                    Text(
+                      diets[index].name,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
+                          fontSize: 16),
+                    ),
+                    Text(
+                      "${diets[index].level} ' | ' ${diets[index].duration}' | '${diets[index].calorie}",
+                      style: const TextStyle(
+                          color: Color(0xff7B6F72),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400),
                     ),
                     Container(
                       height: 45,
@@ -96,7 +77,6 @@ class DietSection extends StatelessWidget {
             ),
             itemCount: diets.length,
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(left: 20, right: 20),
           ),
         )
       ],
